@@ -4,7 +4,7 @@ import ReactDom from 'react-dom';
 import SeasonDisplay from './SeasonDisplay';
 import Spinner from './Spinner';
 
-//this is a class component
+//this is a class base component
 class App extends React.Component {
   state = {
     latitude: null,
@@ -37,27 +37,47 @@ ReactDom.render(<App />, document.querySelector('#root'));
   // In Javascript class the constuctor() function is the very first
   // function that is going to be called any time an instance of this
   // class is created. So any time a it creates a new instance of the
-  // app component and shows it on the screen the constructor() function // is going to automatically call it before anything else.
+  // app component and shows it on the screen the constructor() function
+  // is going to automatically call it before anything else.
 
   // constructor(props) {
-
-  // super is a reference to the parents constuctor fucntion.
-  // have to call super(props) evertime.
-
   // super(props);
-
-  // this is a state object, it contains different pieces of data &
-  // some different properties that are very important and relevant
-  // to the component that it is being put together.
-  // THIS IS THE ONLY TIME we do direct assignment to this.state.
-
   //   this.state = {
   //     latitude: null,
   //     errorMessage: ''
   //   };
+  // };
+
+  // super is a reference to the parents constuctor fucntion.
+  // have to call super(props) evertime.
+
+  // this is a state object, it contains different pieces of data &
+  // some different properties that are very important and relevant
+  // to the component that it is being put together.
 
   //  'Component Lifecycle Methods' is a function that we can optionally
   //  define inside of our class based components if we decide to
   //  implement these menthods. They will be called automatically by
   //  react at certain point during a component life cycle.
-  // };
+  //
+  //  ***** Component Lifecycle *****
+  //  *                              *
+  //  *         constructor          *
+  //  *                              *
+  //  *           render             *
+  //  *                              *
+  //  *  content visible on screen   *
+  //  *                              *
+  //  *      componentDidMount       *
+  //  *                              *
+  //  *   sit and wait for updates   *
+  //  *                              *
+  //  *     componentDidUpdate       *
+  //  *                              *
+  //  * sit and wait until component *
+  //  *     is not longer shown      *
+  //  *                              *
+  //  *     componentWillUnmount     *
+  //  *                              *
+  //  ********************************
+  // -> they are other lifecycle methods (rarely used )

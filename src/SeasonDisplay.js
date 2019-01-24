@@ -2,7 +2,7 @@ import React from 'react';
 
 import './SeasonDisplay.css';
 
-
+//this is a config objects
 const seasonConfig = {
   summer: {
     text: "Let's hit the beach!",
@@ -17,7 +17,11 @@ const seasonConfig = {
 const getSeason = (latitude, month) => {
   if( month > 2 && month < 9 ){
     return latitude > 0 ? 'summer' : 'winter';
+//if lat is > 0 between march - september => summer in the northern hemisphere(truthy)
+//if lat is < 0 between march - september => winter in the southern hemisphere(falsy)
   } else {
+//if lat is > 0 between october - february => winter in the northern hemisphere(truthy)
+//if lat is < 0 between october - february => summer in the southern hemisphere(falsy)
     return latitude > 0 ? 'winter' : 'summer';
   }
 };
